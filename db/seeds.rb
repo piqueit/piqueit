@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-require 'cvs'
+# require 'cvs'
 
-CSV.foreach("airports.csv", headers: true) do |row|
+# CSV.foreach("airports.csv", headers: true) do |row|
 
-end
+# end
