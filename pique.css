@@ -1,3 +1,12 @@
+
+body {
+  position: relative;
+}
+
+html {
+
+}
+
 .airport {
   fill: orange;
   opacity: 0.5;
@@ -12,4 +21,13 @@ path {
 
 svg {
   background: #d5d5d5;
+  width: 100%;
+  height: 100vh;
+}
+
+#logo {
+  position:  absolute;
+  width: 150px;
+  margin: 10px;
+  right: 30px;
 }
