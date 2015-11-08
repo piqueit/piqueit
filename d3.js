@@ -35,7 +35,6 @@ d3.json("world.json", function(error, topology) {
             return projection([d.longitude, d.latitude])[1];
           })
           .attr("class", "airport")
-<<<<<<< HEAD
           .attr("r", function(d){
             console.log(d.traffic)
             return Math.sqrt(d.traffic)/700
@@ -43,9 +42,6 @@ d3.json("world.json", function(error, topology) {
           .attr("id", function(d){
             return d.airport
           })
-=======
-          .attr("r",20)
->>>>>>> working with css file
       })
 });
 
