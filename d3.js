@@ -1,9 +1,8 @@
-
 var width = 1200,
     height = 800;
 
 var projection = d3.geo.mercator()
-    .center([0, 5])
+    .center([0 ,30])
     .scale(150)
 
 var svg = d3.select("body").append("svg")
