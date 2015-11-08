@@ -38,7 +38,9 @@ body { font-family: sans-serif; }
 }
 
 #stubhub {
-  background: orange;
+  /*background: orange;*/
+  background-size: 100% 100%;
+  background-image: url("assets/images/culture.jpg");
 }
 
 .grid-item--width2 { width:  40%; }
