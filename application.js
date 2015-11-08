@@ -11,6 +11,14 @@ $(document).ready(function(){
   $('body').on('click', '#img_circle', goToDynamicPage)
   $('body').on('click', '.rectangle', skyScannerPopUp)
 })
+
+var $grid = function(){$('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition: true
+  })
+};
+
 var cityImgs = {
   Bangalore: ['bangalore2.png', "$804"],
   Beijing: ['beijing.png', "$551"],
@@ -28,6 +36,7 @@ var cityImgs = {
   Paris: ['paris.png', "$923"],
   Toronto: ['toronto.png', "$398"]
 }
+
 var updatePage = function(e){
   e.preventDefault()
   url = $(this).attr('href')
@@ -55,6 +64,7 @@ var hitFlickr = function(city){
     dataType: 'jsonp',
     jsonpCallback: 'jsonFlickrApi'
   }).done(function(data) {
+    $grid();
     console.log(data.photos.photo.length)
     var photos = data.photos.photo;
     var pickedPhotos = [];
@@ -70,18 +80,15 @@ var hitFlickr = function(city){
         html += "</div>";
         stubThatHub(city)
         resultsEl.html(html)
-    }
-    })
-    .fail(function(error){
-      console.log(error)
-
-
+      }
   }).fail(function(xhr, textStatus, errorThrown) {
     console.log(xhr);
     console.log(textStatus);
     console.log(errorThrown);
     // alert("FAIL!!");
-  });
+  }).always(function(){
+    $grid();
+  })
 };
 
 var stubThatHub = function(city){
@@ -113,6 +120,6 @@ var stubThatHub = function(city){
 //   stubThatHub(city)
 // }
 
-var skyScannerPopUp = function(){
-  $("#skyscanner").show
-}
+// var skyScannerPopUp = function(){
+//   $("#skyscanner").show
+// }
