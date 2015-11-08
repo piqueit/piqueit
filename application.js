@@ -1,12 +1,10 @@
 $(document).ready(function(){
   console.log("Ready!")
   $('a').click(updatePage)
-  $("body").click(".airport", grow)
 })
 
 var updatePage = function(e){
   e.preventDefault()
-  console.log("hit")
   url = $(this).attr('href')
 
   $.get(url, function(data){
@@ -14,6 +12,9 @@ var updatePage = function(e){
   })
 }
 
-var grow = function(){
-  console.log("HIT!")
-}
+
+// var getIP = $.getJSON("http://ip-api.com/json", function(data){
+//     data = jsonp(data)
+//     return {userLat: data.lat, userLong: data.long}
+//   })
+
