@@ -69,28 +69,51 @@ var hitFlickr = function(city){
     console.log(data.photos.photo.length)
     var photos = data.photos.photo;
     var pickedPhotos = [];
-    for(i=0; i < 21; i++) {
-      var num = Math.floor(Math.random() * 100) + 1;
-      pickedPhotos.push(num);
-      var html = "";
-      var listing = photos[num];
-      var resultsEl = $('.g' + i);
-        html += "<div data-id=" + listing.id + " class='listing'>";
-        html += "<img src='https://farm" + listing.farm + ".staticflickr.com/" + listing.server + "/" + listing.id + "_" + listing.secret + ".jpg' />";
-        html += "</a>";
-        html += "</div>";
-        stubThatHub(city)
-        resultsEl.html(html)
-      }
-  }).fail(function(xhr, textStatus, errorThrown) {
-    console.log(xhr);
-    console.log(textStatus);
-    console.log(errorThrown);
-    // alert("FAIL!!");
-  }).always(function(){
-    $grid();
-    $('#montage').hide().show(0);
-  })
+    if (photos){
+      for(i=0; i < 21; i++) {
+        var num = Math.floor(Math.random() * 100) + 1;
+        pickedPhotos.push(num);
+        var html = "";
+        var listing = photos[num];
+        var resultsEl = $('.g' + i);
+          html += "<div data-id=" + listing.id + " class='listing'>";
+          html += "<img src='https://farm" + listing.farm + ".staticflickr.com/" + listing.server + "/" + listing.id + "_" + listing.secret + ".jpg' />";
+          html += "</a>";
+          html += "</div>";
+          stubThatHub(city)
+          resultsEl.html(html)
+        }} else {
+          for (var i=0; i<= 20; i ++){
+            if (city == "London") {
+              var resultsEl = $('.g' + i);
+              html += "<div data-id=" + i + " class='listing'>";
+              html += "<img src='" + londonImgs[i]+"' />";
+              html += "</a>";
+              html += "</div>";
+              stubThatHub(city)
+              resultsEl.html(html)
+            }else {
+              var resultsEl = $('.g' + i);
+              html += "<div data-id=" + i + " class='listing'>";
+              html += "<img src='" + dubaiImgs[i]+"' />";
+              html += "</a>";
+              html += "</div>";
+              stubThatHub(city)
+              resultsEl.html(html)
+            }
+
+          }
+        }
+    }).fail(function(xhr, textStatus, errorThrown) {
+      console.log(xhr);
+      console.log(textStatus);
+      console.log(errorThrown);
+      // alert("FAIL!!");
+    }).always(function(){
+      $grid();
+      $('#flickr-results').hide().show(0);
+    })
+
 };
 
 var stubThatHub = function(city){
