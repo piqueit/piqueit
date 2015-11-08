@@ -44,9 +44,9 @@ d3.json("world.json", function(error, topology) {
         .attr("r", function(d){
           return Math.sqrt(d.traffic)/700
         })
-        .attr("class", "airport " + function(d){
+        .attr("class", function(d){
           index ++
-          return index
+          return "airport " + index
         })
         .on("mouseover", function(d) {
           city = d.city
