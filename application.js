@@ -179,9 +179,12 @@ var stubThatHub = function(city){
    },
    url: "https://api.stubhub.com/search/catalog/events/v3?city=" + city,
    success: function (msg) {
+    var event = msg.events[Math.floor(Math.random()*msg.events.length)]
      if(msg.numFound != 0){
-       event = msg.events[Math.floor(Math.random()*msg.events.length)]
-       $("#stubhub").html("<div class='hovereffect'><h2>Concerts</h2><p class='stubhub'><a class='info' href='http://stubhub.co.uk/'"+event.eventUrl+"'>" + event.name + "</a></p></div></div>")
+       $("#stubhub").html("<div class='hovereffect'><h2>C o n c e r t s</h2><p class='stubhub'><a class='info' href='http://stubhub.co.uk/'"+event.eventUrl+"'>" + event.name + "</a></p></div></div>")
+     }
+     else {
+        $("#stubhub").html("<div class='hovereffect'><h2>No Concerts in the Area</h2></div></div>")
      }
    }
  });
