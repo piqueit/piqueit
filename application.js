@@ -1,5 +1,8 @@
 $(document).ready(function(){
+
   console.log("Ready!")
+  var interval = window.setInterval(switchUpView, 12000);
+
   // $('a').click(updatePage)
   $('div[id="opener_wrap"]').click(function(e){
     e.preventDefault()
@@ -7,7 +10,23 @@ $(document).ready(function(){
   })
   $('body').on('click', '#navigation', goToDynamicPage)
 })
-
+var cityImgs = {
+  Bangalore: ['bangalore2.png', "$804"],
+  Beijing: ['beijing.png', "$551"],
+  Cairo: ['cairo.png', "$678"],
+  Dallas: ['dallas.png', "$209"],
+  Dammam: ['dammam.png', "$1148"],
+  Delhi: ['delhi.png', "$595"],
+  Dubai: ['dubai.png', "$941"],
+  Dubai2: ['dubai2.png', "$941"],
+  Harere: ['harere.png', "$1268"],
+  Johanesburg: ['johanesburg.png', "$901"],
+  London: ['london.png', "$766"],
+  Manila: ['manila.png', "$538"],
+  Mauritius: ['mauritius.png', "$1288"],
+  Paris: ['paris.png', "$923"],
+  Toronto: ['toronto.png', "$398"]
+}
 var updatePage = function(e){
   e.preventDefault()
   url = $(this).attr('href')
@@ -65,19 +84,28 @@ var hitFlickr = function(city){
 };
 
 var stubThatHub = function(city){
-    $.ajax({
-      type: "GET",
-      beforeSend: function (request) {
-        request.setRequestHeader("Authorization", "Bearer " + "2xMlMJxbOYHJG65FWNs5QYhNLYQa");
-        request.setRequestHeader("Content-Type", "application / json");
-        request.setRequestHeader("Accept", "application / json");
-      },
-      url: "https://api.stubhub.com/search/catalog/events/v3?city=" + city,
-      success: function (msg) {
-        if(msg.numFound != 0){
-          event = msg.events[Math.floor(Math.random()*msg.events.length)]
-          $("#stubhub").html("<p class='stubhub'><a href='http://stubhub.co.uk/"+event.eventUrl+"'>" + event.description + "</a></p>")
-        }
+  $.ajax({
+    type: "GET",
+    beforeSend: function (request) {
+      request.setRequestHeader("Authorization", "Bearer " + "2xMlMJxbOYHJG65FWNs5QYhNLYQa");
+      request.setRequestHeader("Content-Type", "application / json");
+      request.setRequestHeader("Accept", "application / json");
+    },
+    url: "https://api.stubhub.com/search/catalog/events/v3?city=" + city,
+    success: function (msg) {
+      if(msg.numFound != 0){
+        event = msg.events[Math.floor(Math.random()*msg.events.length)]
+        $("#stubhub").html("<p class='stubhub'><a href='http://stubhub.co.uk/"+event.eventUrl+"'>" + event.description + "</a></p>")
       }
-    });
-  }
+    }
+  });
+}
+
+var switchUpView = function(){
+  var city = $("circle." + Math.floor(Math.random()*15 + 1)).attr("id")
+  console.log(city)
+  $('#img_circle img').remove()
+  $('#img_circle').append("<img src='/assets/images/" + cityImgs[city][0] +"'>" )
+  $('#navigation').html(city)
+  $('#navigation').append(" " + cityImgs[city][1])
+}

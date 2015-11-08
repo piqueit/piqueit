@@ -2,24 +2,6 @@ var wdth = $( window ).width();
 var hght = $( window ).height();
 var user;
 var city
-var cityImgs = {
-  Bangalore: 'bangalore2.png',
-  Beijing: 'beijing,png',
-  Cairo: 'cairo.png',
-  Dallas: 'dallas.png',
-  Dammam: 'dammam.png',
-  Delhi: 'delhi.png',
-  Dubai: 'dubai.png',
-  Dubai2: 'dubai2.png',
-  Harere: 'harere.png',
-  Johanesburg: 'johanesburg.png',
-  London: 'london.png',
-  Manila: 'manila.png',
-  Mauritius: 'mauritius.png',
-  Paris: 'paris.png',
-  'San Francisco': 'sf.png',
-  Toronto: 'toronto.png'
-}
 
 var projection = d3.geo.mercator()
     .center([0,70])
@@ -44,6 +26,7 @@ d3.json("world.json", function(error, topology) {
       .attr("d", path)
 
     d3.csv("airports.csv", function(error, data) {
+      var index = 0;
       g.selectAll("circle")
         .data(data)
         .enter()
@@ -55,19 +38,24 @@ d3.json("world.json", function(error, topology) {
           return projection([d.longitude, d.latitude])[1];
         })
         .attr("class", "airport")
+        .attr("id", function(d){
+          return d.city
+        })
         .attr("r", function(d){
           return Math.sqrt(d.traffic)/700
         })
-        .attr("id", function(d){
-          return d.airport
+        .attr("class", function(d){
+          index ++
+          return index
         })
         .on("mouseover", function(d) {
           city = d.city
           $('#img_circle img').remove()
-          $('#img_circle').append("<img src='/assets/images/" + cityImgs[city] +"'>" )
-          $('#navigation').html(d.city)
+          $('#img_circle').append("<img src='/assets/images/" + cityImgs[city][0] +"'>" )
+          $('#navigation').html(city)
           $('#navigation').append(" " + d.price)
-         })
+         });
+        console.log(index)
     })
 
     $.ajax({
