@@ -93,14 +93,13 @@ var hitFlickr = function(city){
           resultsEl.html(html)
         }
 
-
         }} else {
           for (var i=0; i<= 20; i++){
-            if (city == "London") {
-              console.log(i)
-              var resultsLon = $('.g' + i);
-              html += "<div data-id=" + i + " class='listing'>";
-              html += "<img src='" + londonImgs[i] + "' alt='' >";
+            if (city == "Toronto") {
+              // console.log(i)
+              // var resultsLon = $('.g' + i);
+              html += "<div>";
+              html += "<img src='assets/images/dummy.jpg'>";
               html += "</div>";
               stubThatHub(city)
               resultsLon.html(html)
@@ -113,7 +112,6 @@ var hitFlickr = function(city){
               stubThatHub(city)
               resultsEl.html(html)
             }
-
           }
         }
     }).fail(function(xhr, textStatus, errorThrown) {

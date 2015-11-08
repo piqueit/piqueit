@@ -33,7 +33,7 @@ body { font-family: sans-serif; }
 .grid-item {
  height: 120px;
  float: left;
- background: #FAFAFA  ;
+ background: lightgray;
  border: 1px solid white;
 }
 
