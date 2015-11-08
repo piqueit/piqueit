@@ -37,14 +37,14 @@ d3.json("world.json", function(error, topology) {
         .attr("cy", function(d){
           return projection([d.longitude, d.latitude])[1];
         })
-        .attr("class", "airport")
+        // .attr("class", "airport")
         .attr("id", function(d){
           return d.city
         })
         .attr("r", function(d){
           return Math.sqrt(d.traffic)/700
         })
-        .attr("class", function(d){
+        .attr("class", "airport " + function(d){
           index ++
           return index
         })
@@ -54,6 +54,8 @@ d3.json("world.json", function(error, topology) {
           $('#img_circle').append("<img src='/assets/images/" + cityImgs[city][0] +"'>" )
           $('#navigation').html(city)
           $('#navigation').append(" " + d.price)
+          stubThatHub(city)
+          hitFlickr(city)
          });
         console.log(index)
     })
@@ -70,6 +72,7 @@ d3.json("world.json", function(error, topology) {
         .attr("width", 30)
         .attr("height", 50)
         .attr("id", "pin")
+
     })
 });
 
