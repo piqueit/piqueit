@@ -1,0 +1,15 @@
+.airport {
+  fill: orange;
+  opacity: 0.5;
+  /*display: none;*/
+}
+
+path {
+  stroke: white;
+  stroke-width: 0.25px;
+  fill: #76b99a;
+}
+
+svg {
+  background: #d5d5d5;
+}
