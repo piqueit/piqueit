@@ -2,6 +2,24 @@ var wdth = $( window ).width();
 var hght = $( window ).height();
 var user;
 var city
+var cityImgs = {
+  Bangalore: 'bangalore2.png',
+  Beijing: 'beijing,png',
+  Cairo: 'cairo.png',
+  Dallas: 'dallas.png',
+  Dammam: 'dammam.png',
+  Delhi: 'delhi.png',
+  Dubai: 'dubai.png',
+  Dubai2: 'dubai2.png',
+  Harere: 'harere.png',
+  Johanesburg: 'johanesburg.png',
+  London: 'london.png',
+  Manila: 'manila.png',
+  Mauritius: 'mauritius.png',
+  Paris: 'paris.png',
+  'San Francisco': 'sf.png',
+  Toronto: 'toronto.png'
+}
 
 var projection = d3.geo.mercator()
     .center([0,70])
@@ -45,6 +63,8 @@ d3.json("world.json", function(error, topology) {
         })
         .on("mouseover", function(d) {
           city = d.city
+          $('#img_circle img').remove()
+          $('#img_circle').append("<img src='/assets/images/" + cityImgs[city] +"'>" )
           $('#navigation').html(d.city)
           $('#navigation').append(" " + d.price)
          })
