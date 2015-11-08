@@ -37,7 +37,8 @@ d3.json("world.json", function(error, topology) {
           })
           .attr("class", "airport")
           .attr("r", function(d){
-            return Math.sqrt(d.traffic)
+            console.log(d.traffic)
+            return Math.sqrt(d.traffic)/700
           })
           .attr("id", function(d){
             return d.airport
