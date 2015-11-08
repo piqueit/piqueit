@@ -1,8 +1,4 @@
 
-
-// $( window ).resize(function() {
-
-
 var wdth = $( window ).width();
 var hght = $( window ).height();
 
@@ -51,8 +47,6 @@ d3.json("world.json", function(error, topology) {
             return d.airport
           })
       })
-// });
-
 });
 
 var zoom = d3.behavior.zoom()

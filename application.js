@@ -23,4 +23,3 @@ var updatePage = function(e){
 var grow = function(){
   console.log("HIT!")
 }
-
