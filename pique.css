@@ -12,7 +12,10 @@ html {
 .airport {
   fill: orange;
   opacity: 0.5;
-  /*display: none;*/
+}
+
+.airport:hover {
+  fill: rgba(223, 85, 83, 1);
 }
 
 .logo {
