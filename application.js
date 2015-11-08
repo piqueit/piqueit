@@ -9,7 +9,13 @@ $(document).ready(function(){
   })
   $('body').on('click', '#img_circle', goToDynamicPage)
   // $('body').on('click', '.rectangle', skyScannerPopUp)
+  $('#goToEmirates').click(goToEmirates)
 })
+
+var goToEmirates = function(){
+
+  window.open('http://www.emirates.com/english/plan_book/dubai_international_airport/dubai_international_airport.aspx')
+}
 
 var $grid = function(){$('.grid').masonry({
     itemSelector: '.grid-item',
@@ -71,6 +77,7 @@ var hitFlickr = function(city){
     var pickedPhotos = [];
     if (photos){
       for(i=0; i < 21; i++) {
+        if (i != 11 && i != 4){
         var num = Math.floor(Math.random() * 100) + 1;
         pickedPhotos.push(num);
         var html = "";
@@ -82,6 +89,9 @@ var hitFlickr = function(city){
           html += "</div>";
           stubThatHub(city)
           resultsEl.html(html)
+        }
+
+
         }} else {
           for (var i=0; i<= 20; i ++){
             if (city == "London") {
