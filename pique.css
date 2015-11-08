@@ -140,6 +140,7 @@ svg {
    z-index: 500; /* the stack order: foreground */
    margin: 3em 0;
    cursor: pointer;
+   color: white;
 }
 
 .l-triangle-top {
