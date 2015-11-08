@@ -150,7 +150,6 @@ var hitFlickr = function(city){
       $('#flickr-results').hide().show(0);
     })
 
->>>>>>> f2818dbded1c5b6e12924495218fc46994be9775
 };
 
 var stubThatHub = function(city){

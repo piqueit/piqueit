@@ -37,6 +37,10 @@ body { font-family: sans-serif; }
   border: 1px solid white;
 }
 
+#stubhub {
+  background: orange;
+}
+
 .grid-item--width2 { width:  40%; }
 .grid-item--width3 { width:  60%; }
 
