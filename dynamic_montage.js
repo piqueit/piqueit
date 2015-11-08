@@ -14,7 +14,6 @@ var getCityInfo = function(e) {
   console.log("hit")
   // get the input from the text field
   terms = $('form#flickr-search input').val();
-  stubThatHub(terms)
   // using jsonp in order to do a cross-domain POST
   $.ajax({
     url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9717c8e30be75046ec7318c3a65c17b4&format=json&orientation=landscape&tags=' + terms + '&sort=interestingness-desc',
@@ -35,6 +34,7 @@ var getCityInfo = function(e) {
         html += "<img src='https://farm" + listing.farm + ".staticflickr.com/" + listing.server + "/" + listing.id + "_" + listing.secret + ".jpg' />";
         html += "</a>";
         html += "</div>";
+        stubThatHub(terms)
         resultsEl.html(html)
     }
 
@@ -57,10 +57,9 @@ var stubThatHub = function(city){
     },
     url: "https://api.stubhub.com/search/catalog/events/v3?city=" + city,
     success: function (msg) {
-      // $("body").append(msg.stringify);
-      console.log(msg);
       if(msg.numFound != 0){
-        $("#stubhub").html(msg.events[Math.floor(Math.random()*10)].description)
+        event = msg.events[Math.floor(Math.random()*msg.events.length)]
+        $("#stubhub").html("<p class='stubhub'><a href='http://stubhub.co.uk/"+event.eventUrl+"'>" + event.description + "</a></p>")
       }
       }
       });
