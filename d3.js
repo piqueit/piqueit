@@ -1,14 +1,12 @@
-
 var wdth = $( window ).width();
 var hght = $( window ).height();
-
+var user;
 
 var projection = d3.geo.mercator()
     .center([0,70])
     .rotate([-10,0])
     .translate([wdth/2,hght/3.5])
     .scale(165);
-
 
 var svg = d3.select("body").selectAll("div").append("svg")
 
@@ -50,6 +48,7 @@ d3.json("world.json", function(error, topology) {
       url: "http://ip-api.com/json",
       dataType: "json"
     }).done(function(data){
+      skyscanner(data);
       g.append("svg:image")
         .attr("xlink:href", "assets/images/pin_drop.png")
         .attr("x", function(){return projection([data.lon, data.lat])[0] -15})
@@ -58,6 +57,7 @@ d3.json("world.json", function(error, topology) {
         .attr("height", 50)
         .attr("id", "pin")
     })
+
     // console.log(userLong)
 
 });
