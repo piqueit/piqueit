@@ -209,26 +209,21 @@ svg {
 #emirates{
   display: inline-block;
   text-align: center;
+  background-color: darkred;
 }
 #goToEmirates {
   vertical-align: middle;
   z-index: 2000;
   font-size: 3em;
-  box-shadow: 3 3 10 black;
+  /*box-shadow: 3 3 10 black;*/
   border-radius: 1em;
-  border: 3px solid black;
+  /*border: 3px solid black;*/
   margin: .5em;
   padding: .5em;
   background-color: darkred;
-  font-weight: bolder;
+  /*font-weight: bolder;*/
   color: white;
+  border: none;
+  /*font*/
 }
 
-#skyscanner {
-  display: none;
-  position: fixed;
-  margin-top: 0;
-  border:5px solid black;
-  width: 400px;
-  height:400px;
-}
