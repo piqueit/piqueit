@@ -102,16 +102,6 @@ var stubThatHub = function(city){
   });
 }
 
-// var switchUpView = function(){
-//   var city = $("circle." + Math.floor(Math.random()*15 + 1)).attr("id")
-//   console.log(city)
-//   $('#img_circle img').remove()
-//   $('#img_circle').append("<img src='/assets/images/" + cityImgs[city][0] +"'>" )
-//   $('#navigation').html(city)
-//   $('#navigation').append(" " + cityImgs[city][1])
-//   hitFlickr(city)
-//   stubThatHub(city)
-// }
 
 var skyScannerPopUp = function(){
   $("#skyscanner").show
