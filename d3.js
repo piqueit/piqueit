@@ -1,13 +1,12 @@
-var width = 1200,
-    height = 800;
+
 
 var projection = d3.geo.mercator()
     .center([0,70])
-    .scale(170);
+    .rotate([-10,0])
+    .translate([600,110])
+    .scale(165);
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+var svg = d3.select("body").selectAll("div").append("svg")
 
 var path = d3.geo.path()
     .projection(projection);
