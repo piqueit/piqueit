@@ -96,7 +96,98 @@ svg {
   bottom: 8px;
 }
 
-#pin {
+#img_circle {
+  background-color: rgba(223, 85, 83, 0.4);
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  position: absolute;
+  top: 13%;
+  left: 13%;
+}
 
+#loc_price {
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  top: 100px;
+  -webkit-transform: rotate(-10deg);
+}
+
+#loc_price a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: white;
+  vertical-align: middle;
+}
+
+#navigation_container {
+   margin: 0 auto;
+   width: 200px;
+}
+
+.rectangle {
+   background: orange;
+   height: 31px;
+   position: relative;
+   -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+   box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+   z-index: 500; /* the stack order: foreground */
+   margin: 3em 0;
+}
+
+.l-triangle-top {
+  zoom: 0.5;
+   border-color: orange transparent transparent;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: left;
+   top: -6px;
+   left: -50px;
+}
+
+.l-triangle-bottom {
+    zoom: 0.5;
+   border-color: transparent transparent orange;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: left;
+   top: -50px;
+   left: -150px;
+}
+
+.r-triangle-top {
+    zoom: 0.5;
+   border-color: orange transparent transparent;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: right;
+   right: -50px;
+   top: -140px;
+}
+
+.r-triangle-bottom {
+  zoom: 0.5;
+   border-color: transparent transparent orange;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: right;
+   top: -185px;
+   right: -145px;
 }
 

@@ -6,10 +6,8 @@ var hght = $( window ).height();
 var projection = d3.geo.mercator()
     .center([0,70])
     .rotate([-10,0])
-    .translate([wdth/2,hght/3])
+    .translate([wdth/2,hght/3.5])
     .scale(165);
-
-
 
 
 var svg = d3.select("body").selectAll("div").append("svg")
