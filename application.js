@@ -2,7 +2,6 @@ $(document).ready(function(){
 
   console.log("Ready!")
   // var interval = window.setInterval(switchUpView, 12000);
-
   // $('a').click(updatePage)
   $('div[id="opener_wrap"]').click(function(e){
     e.preventDefault()
@@ -49,8 +48,8 @@ var updatePage = function(e){
 var goToDynamicPage = function(e){
   e.preventDefault()
   $("#montage").show()
-  $("#landing-page").hide()
-  $("svg").hide()
+  $("#landing-page").hide('fast')
+  $("svg").fadeOut(600)
   // $.get('/dynamic_montage', function(response){
   //   $('body').html(response)
   // console.log(city)
@@ -65,6 +64,7 @@ var hitFlickr = function(city){
     jsonpCallback: 'jsonFlickrApi'
   }).done(function(data) {
     $grid();
+    $('#montage').hide().show(0);
     console.log(data.photos.photo.length)
     var photos = data.photos.photo;
     var pickedPhotos = [];
@@ -88,6 +88,7 @@ var hitFlickr = function(city){
     // alert("FAIL!!");
   }).always(function(){
     $grid();
+    $('#montage').hide().show(0);
   })
 };
 
