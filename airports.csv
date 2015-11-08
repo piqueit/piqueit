@@ -1,5 +1,5 @@
-city,airport,latitude,longitude,traffic,
-London,LHR,51.4775,-0.4614,69433565,
+city,airport,latitude,longitude,traffic,price
+London,LHR,51.4775,-0.4614,69433565,$
 Cairo,CAI,30.1219,31.4056,14711500,
 Dubai,DXB,25.2528,55.3644,50977960,
 Paris,CDG,49.0097,2.5478,60970551,
