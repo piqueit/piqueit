@@ -43,7 +43,6 @@ d3.json("world.json", function(error, topology) {
           .attr("id", function(d){
             return d.airport
           })
-          .style("fill", "red")
       })
 });
 
