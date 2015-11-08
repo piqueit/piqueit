@@ -227,3 +227,19 @@ svg {
   /*font*/
 }
 
+#skyscanner {
+  display: none;
+  position: fixed;
+  margin-top: 0;
+  border:5px solid black;
+  width: 400px;
+  height:400px;
+}
+
+#city-title {
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  font-family: Gill Sans Extrabold, sans-serif;
+}
+

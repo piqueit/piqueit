@@ -164,6 +164,7 @@ var hitFlickr = function(city){
     }).always(function(){
       $grid();
       $('#flickr-results').hide().show(0);
+      $('#city-title').hide().show(0);
     })
 
 };
