@@ -42,7 +42,6 @@ d3.json("world.json", function(error, topology) {
         })
         .attr("class", "airport")
         .attr("r", function(d){
-          console.log(d.traffic)
           return Math.sqrt(d.traffic)/700
         })
         .attr("id", function(d){
@@ -53,13 +52,13 @@ d3.json("world.json", function(error, topology) {
       url: "http://ip-api.com/json",
       dataType: "json"
     }).done(function(data){
-      var data = data
-      g.append("circle")
-        .attr({cx: projection([data.lon, data.lat])[0],
-          cy: projection([data.lon, data.lat])[1],
-          r: 10,
-          fill: "blue"
-        })
+      g.append("svg:image")
+        .attr("xlink:href", "assets/images/pin_drop.png")
+        .attr("x", function(){return projection([data.lon, data.lat])[0] -15})
+        .attr("y", function(){return projection([data.lon, data.lat])[1] -40})
+        .attr("width", 30)
+        .attr("height", 50)
+        .attr("id", "pin")
     })
     // console.log(userLong)
 
