@@ -2,6 +2,12 @@ $(document).ready(function(){
   console.log("Ready!")
   $('a').click(updatePage)
   $("body").click(".airport", grow)
+
+
+  $('div[id="opener_wrap"]').click(function(e){
+    e.preventDefault()
+    $(this).slideUp('slow')
+  })
 })
 
 var updatePage = function(e){
@@ -17,3 +23,4 @@ var updatePage = function(e){
 var grow = function(){
   console.log("HIT!")
 }
+
