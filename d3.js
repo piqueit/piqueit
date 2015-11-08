@@ -41,27 +41,15 @@ d3.json("world.json", function(error, topology) {
           return Math.sqrt(d.traffic)/700
         })
         .attr("id", function(d){
-          return index
+          return d.airport
         })
         .on("mouseover", function(d) {
-          debugger
-          d3.select(this).text(d.city)
+          $('#navigation').html(d.city)
+          $('#navigation').append(" " + d.price)
          })
         .on("mouseout", function(d) {
          })
     })
-
-    // var node = svg.selectAll(".node")
-    //   .data(graph.nodes)
-    //   .enter().append("g").call(force.drag);
-
-    //   node.append("circle")
-    //   .attr("class", "node")
-    //   .attr("r", 5)
-    //   .style("fill", function (d) { return color(d.group); });
-
-    //   node.append("text")
-    //   .text(function (d) { return d.city; });
 
     $.ajax({
       url: "http://ip-api.com/json",
