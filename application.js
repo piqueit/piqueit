@@ -136,11 +136,13 @@ var hitFlickr = function(city){
 
         }} else {
           for (var i=0; i<= 20; i++){
+            var resultsLon = ""
+            var resultsEl = ""
             if (city == "London") {
               console.log(i)
               var resultsLon = $('.g' + i);
               html += "<div data-id=" + i + " class='listing'>";
-              html += "<img src='" + londonImgs[i] + "' alt='' >";
+              html += "<img src='" + londonImgs[Math.floor(Math.random()*20)] + "' alt='' >";
               html += "</div>";
               stubThatHub(city)
               resultsLon.html(html)
