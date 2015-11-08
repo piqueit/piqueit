@@ -11,6 +11,9 @@ body { font-family: sans-serif; }
   background: white;
   max-width: 100%;
   border: 8px solid white;
+  overflow: hidden;
+  position: relative;
+  top: 60px;
 }
 
 /* clearfix */
@@ -30,19 +33,18 @@ body { font-family: sans-serif; }
 .grid-item {
   height: 120px;
   float: left;
-  background: orange;
+  background: #FAFAFA ;
   border: 1px solid white;
 }
 
 .grid-item--width2 { width:  40%; }
 .grid-item--width3 { width:  60%; }
 
-.grid-item--height1 { height: 140px; }
-.grid-item--height1andhalf { height: 200px; }
-.grid-item--height2 { height: 220px; }
-.grid-item--height3 { height: 180px; }
-.grid-item--height4 { height: 320px; }
-.grid-item--height5 { height: 180px; }
+.grid-item--height1 { height: 160px; }
+.grid-item--height2 { height: 100px; }
+.grid-item--height3 { height: 200px; }
+.grid-item--height4 { height: 430px; }
+.grid-item--height5 { height: 200px; }
 
 img {
   max-height:auto;
