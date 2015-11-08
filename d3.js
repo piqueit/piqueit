@@ -6,6 +6,7 @@ var projection = d3.geo.mercator()
     .translate([600,110])
     .scale(165);
 
+
 var svg = d3.select("body").selectAll("div").append("svg")
 
 var path = d3.geo.path()
