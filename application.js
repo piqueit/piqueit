@@ -170,21 +170,21 @@ var hitFlickr = function(city){
 };
 
 var stubThatHub = function(city){
-  $.ajax({
-    type: "GET",
-    beforeSend: function (request) {
-      request.setRequestHeader("Authorization", "Bearer " + "2xMlMJxbOYHJG65FWNs5QYhNLYQa");
-      request.setRequestHeader("Content-Type", "application / json");
-      request.setRequestHeader("Accept", "application / json");
-    },
-    url: "https://api.stubhub.com/search/catalog/events/v3?city=" + city,
-    success: function (msg) {
-      if(msg.numFound != 0){
-        event = msg.events[Math.floor(Math.random()*msg.events.length)]
-        $("#stubhub").html("<p class='stubhub'><a href='http://stubhub.co.uk/"+event.eventUrl+"'>" + event.description + "</a></p>")
-      }
-    }
-  });
+ $.ajax({
+   type: "GET",
+   beforeSend: function (request) {
+     request.setRequestHeader("Authorization", "Bearer " + "2xMlMJxbOYHJG65FWNs5QYhNLYQa");
+     request.setRequestHeader("Content-Type", "application / json");
+     request.setRequestHeader("Accept", "application / json");
+   },
+   url: "https://api.stubhub.com/search/catalog/events/v3?city=" + city,
+   success: function (msg) {
+     if(msg.numFound != 0){
+       event = msg.events[Math.floor(Math.random()*msg.events.length)]
+       $("#stubhub").html("<div class='hovereffect'><h2>Concerts</h2><p class='stubhub'><a class='info' href='http://stubhub.co.uk/'"+event.eventUrl+"'>" + event.name + "</a></p></div></div>")
+     }
+   }
+ });
 }
 
 
