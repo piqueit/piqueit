@@ -1,6 +1,11 @@
 $(document).ready(function(){
   console.log("Ready!")
   $('a').click(updatePage)
+  $('div[id="opener_wrap"]').click(function(e){
+    e.preventDefault()
+    $(this).slideUp('slow')
+  })
+
 })
 
 var updatePage = function(e){
