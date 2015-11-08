@@ -48,7 +48,7 @@ d3.json("world.json", function(error, topology) {
       url: "http://ip-api.com/json",
       dataType: "json"
     }).done(function(data){
-      skyscanner(data);
+      // skyscanner(data);
       g.append("svg:image")
         .attr("xlink:href", "assets/images/pin_drop.png")
         .attr("x", function(){return projection([data.lon, data.lat])[0] -15})

@@ -19,7 +19,6 @@ var skyscanner = function(user){
   .done( function(){
     console.log("we made it")
   })
-
 }
 
 
