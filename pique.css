@@ -63,8 +63,7 @@ svg {
 }
 
 #opener_inner {
-  width: 450px;
-  height: auto;
+  width: 450px; height: auto;
   position: absolute;
   margin: 0 auto;
   left: 5%;
@@ -97,13 +96,14 @@ svg {
 }
 
 #img_circle {
+  zoom: 0.8;
   background-color: rgba(223, 85, 83, 0.4);
   height: 200px;
   width: 200px;
   border-radius: 100%;
   position: absolute;
-  top: 13%;
-  left: 13%;
+  top: 8%;
+  left: 6%;
 }
 
 #loc_price {
