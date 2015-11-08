@@ -48,6 +48,7 @@ var updatePage = function(e){
 var goToDynamicPage = function(e){
   e.preventDefault()
   $("#montage").show()
+  hitFlickr(city);
   $("#landing-page").hide('fast')
   $("svg").fadeOut(600)
   // $.get('/dynamic_montage', function(response){
@@ -64,12 +65,12 @@ var hitFlickr = function(city){
     jsonpCallback: 'jsonFlickrApi'
   }).done(function(data) {
     $grid();
-    $('#flickr-results').hide().show(0);
+    $('#montage').hide().show(0);
     console.log(data.photos.photo.length)
     var photos = data.photos.photo;
     var pickedPhotos = [];
     if (photos == 0){
-      for(i=0; i < 22; i++) {
+      for(i=0; i < 21; i++) {
         var num = Math.floor(Math.random() * 100) + 1;
         pickedPhotos.push(num);
         var html = "";

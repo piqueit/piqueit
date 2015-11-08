@@ -142,6 +142,14 @@ svg {
    cursor: pointer;
 }
 
+#navigation{
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 31px;
+}
+
 .l-triangle-top {
   zoom: 0.5;
    border-color: orange transparent transparent;
