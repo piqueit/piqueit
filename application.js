@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  setInterval(hitFlickr('dubai'), 4000)
   console.log("Ready!")
   // var interval = window.setInterval(switchUpView, 12000);
   // $('a').click(updatePage)
@@ -48,6 +48,7 @@ var updatePage = function(e){
 var goToDynamicPage = function(e){
   e.preventDefault()
   $("#montage").show()
+  hitFlickr(city)
   $("#landing-page").hide('fast')
   $("svg").fadeOut(600)
   // $.get('/dynamic_montage', function(response){
@@ -80,6 +81,7 @@ var hitFlickr = function(city){
         html += "</div>";
         stubThatHub(city)
         resultsEl.html(html)
+
       }
   }).fail(function(xhr, textStatus, errorThrown) {
     console.log(xhr);
@@ -104,7 +106,7 @@ var stubThatHub = function(city){
     success: function (msg) {
       if(msg.numFound != 0){
         event = msg.events[Math.floor(Math.random()*msg.events.length)]
-        $("#stubhub").html("<p class='stubhub'><a href='http://stubhub.co.uk/"+event.eventUrl+"'>" + event.description + "</a></p>")
+        $("#stubhub").html("<div class='hovereffect'><h2>Concerts</h2><p class='stubhub'><a class='info' href='http://stubhub.co.uk/'"+event.eventUrl+"'>" + event.name + "</a></p></div></div>")
       }
     }
   });
