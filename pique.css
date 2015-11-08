@@ -12,13 +12,16 @@ html {
 .airport {
   fill: orange;
   opacity: 0.5;
-  /*display: none;*/
+}
+
+.airport:hover {
+  fill: rgba(223, 85, 83, 1);
 }
 
 .logo {
-  position:  absolute;
+  position: absolute;
   width: 150px;
-  margin: 10px;
+  margin: 4.5px;
   right: 30px;
   cursor: pointer;
 }
@@ -35,13 +38,6 @@ svg {
   height: 100vh;
   border-color: red;
   cursor: pointer;
-}
-
-#logo {
-  position:  absolute;
-  width: 150px;
-  margin: 10px;
-  right: 30px;
 }
 
 #opener_wrap {
@@ -97,21 +93,21 @@ svg {
 }
 
 #img_circle {
-  zoom: 0.8;
+  zoom: 1;
   background-color: rgba(223, 85, 83, 0.6);
   height: 200px;
   width: 200px;
   border-radius: 100%;
-  position: absolute;
-  top: 8%;
+  position: fixed;
+  top: 12%;
   left: 6%;
   /*cursor: pointer;*/
 }
 
 #loc_price {
   width: 200px;
-  height: 30px;
-  position: absolute;
+  height: 32px;
+  position: fixed;
   top: 100px;
   -webkit-transform: rotate(-10deg);
 }
@@ -124,6 +120,9 @@ svg {
 }
 
 #navigation_container {
+  position: fixed;
+  top: 100px;
+  left: -20px;
    margin: 0 auto;
    width: 200px;
 }
@@ -142,6 +141,14 @@ svg {
    cursor: pointer;
 }
 
+#navigation{
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 31px;
+}
+
 .l-triangle-top {
   zoom: 0.5;
    border-color: orange transparent transparent;
@@ -151,7 +158,7 @@ svg {
    width:0px;
    position: relative;
    float: left;
-   top: -6px;
+   top: 90px;
    left: -50px;
 }
 
@@ -164,7 +171,7 @@ svg {
    width:0px;
    position: relative;
    float: left;
-   top: -50px;
+   top: 50px;
    left: -150px;
 }
 
@@ -199,6 +206,24 @@ svg {
   z-index: 2000;
 }
 
+#emirates{
+  display: inline-block;
+  text-align: center;
+}
+#goToEmirates {
+  vertical-align: middle;
+  z-index: 2000;
+  font-size: 3em;
+  box-shadow: 3 3 10 black;
+  border-radius: 1em;
+  border: 3px solid black;
+  margin: .5em;
+  padding: .5em;
+  background-color: darkred;
+  font-weight: bolder;
+  color: white;
+}
+
 #skyscanner {
   display: none;
   position: fixed;
@@ -207,4 +232,3 @@ svg {
   width: 400px;
   height:400px;
 }
-

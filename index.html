@@ -11,27 +11,31 @@
   <link rel="stylesheet" href="dynamic_montage.css">
   <link rel="stylesheet" href="pique.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="imgs.js"></script>
   <script src="d3.js"></script>
   <script src="/application.js"></script>
 
 </header>
 <body>
+
   <div id="landing-page">
     <div id="img_circle">
+      <img src='/assets/images/sf.png'>
       <div id="loc_price">
         <div id="navigation_container">
         <div class="l-triangle-top"></div>
         <div class="l-triangle-bottom"></div>
         <div class="rectangle">
-          <p id="navigation">
-          <!-- <a href="/">Berlin $780</a> -->
-        </p>
+          <p id="navigation">Home</p>
+            </div>
+          <div class="r-triangle-top"></div>
+          <div class="r-triangle-bottom"></div>
+
         </div>
-        <div class="r-triangle-top"></div>
-        <div class="r-triangle-bottom"></div>
       </div>
     </div>
   </div>
+
 
   <div id="opener_wrap">
     <div id='cover_logo'></div>
@@ -49,9 +53,11 @@
     </div>
   </div>
 </div>
+
+
 <div id="montage">
 <div id="flickr-results">
-  <form id="flickr-search">
+  <!-- <form id="flickr-search">
     <div class="row">
       <div class="col-md 12 text-center">
         <input type="text" id="flickr-terms" placeholder="explore" />
@@ -62,44 +68,31 @@
         <button class="btn">Search!</button>
       </div>
     </div>
-  </form>
+  </form> -->
 
   <div id="flickr-results">
-
-<!--   <div class="row">
-    <div class="col-md-3">.col-md-3</div>
-    <div class="col-md-3">.col-md-3</div>
-    <div class="col-md-3">.col-md-3</div>
-    <div class="col-md-3">.col-md-3</div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">.col-md-4</div>
-    <div class="col-md-2">.col-md-2</div>
-    <div class="<col></col>l-md-2">.col-md-5</div>
-    <div class="col-md-2">.col-md-1</div>
-    <div class="col-md-2">.col-md-1</div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-2">.col-md-2</div>
-    <div class="col-md-5">.col-md-5</div>
-    <div class="col-md-1">.col-md-1</div>
-  </div> -->
     <div class="grid">
       <div class="g0 grid-sizer"></div>
       <div class="g1 grid-item grid-item--width1 landscape"></div>
-      <div class="g12 grid-item grid-item--width2 grid-item--height2 landscape">a</div>
-      <div class="g13 grid-item grid-item--width2 grid-item--height4 landscape">ABC</div>
-      <div class="g14 grid-item grid-item--height3 portrait"></div>
-
-
-      <div class="g15 grid-item grid-item--height3 portrait" id="stubhub"></div>
-
-      <div class="g16 grid-item grid-item--height1 landscape"></div>
-      <div class="g17 grid-item grid-item--width2 grid-item--height4 landscape"></div>
+      <div class="g2 grid-item grid-item--width2 grid-item--height2 landscape"></div>
+      <div class="g3 grid-item grid-item--width2 grid-item--height4 landscape"></div>
+      <div class="g4 grid-item grid-item--height3 portrait"  id="stubhub"></div>
+      <div class="g5 grid-item grid-item--height3 portrait"></div>
+      <div class="g6 grid-item grid-item--height1 landscape"></div>
+      <div class="g7 grid-item grid-item--width2 grid-item--height4 landscape"></div>
+      <div class="g8 grid-item grid-item--height5 portrait"></div>
+      <div class="g9 grid-item grid-item--height3 landscape"></div>
+      <div class="g11 grid-item grid-item--height3" id="emirates"><button id="goToEmirates">Take Me There!</button></div>
+      <div class="g12 grid-item grid-item--height5 portrait"></div>
+      <div class="g13 grid-item grid-item--height1 landscape"></div>
+      <div class="g14 grid-item grid-item--height1"></div>
+      <div class="g15 grid-item grid-item--height5 portrait"></div>
+      <div class="g16 grid-item grid-item--height3 landscape"></div>
+      <div class="g17 grid-item grid-item--height3"></div>
       <div class="g18 grid-item grid-item--height5 portrait"></div>
-      <div class="g19 grid-item grid-item--height3 landscape">ABC</div>
-      <div class="g21 grid-item grid-item--height3"></div>
+      <div class="g19 grid-item grid-item--height1 landscape"></div>
+      <div class="g20 grid-item grid-item--height1"></div>
+
     </div>
   </div>
 </div>

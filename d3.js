@@ -16,6 +16,12 @@ var path = d3.geo.path()
 
 var g = svg.append("g");
 
+var myMouseoverFunction = function() {
+  var circle = d3.select(this);
+  circle.transition().duration(500)
+    .attr("r", circle.attr("r") * 1 + 5 );
+}
+
 // load and display the World
 d3.json("world.json", function(error, topology) {
     g.selectAll("path")
@@ -50,14 +56,21 @@ d3.json("world.json", function(error, topology) {
         })
         .on("mouseover", function(d) {
           city = d.city
+          var circle_animate = d3.select(this);
+          circle_animate.transition().duration(500)
+          .attr("r", circle_animate.attr("r") * 1 + 10 )
           $('#img_circle img').remove()
           $('#img_circle').append("<img src='/assets/images/" + cityImgs[city][0] +"'>" )
           $('#navigation').html(city)
           $('#navigation').append(" " + d.price)
           stubThatHub(city)
           hitFlickr(city)
-         });
-        console.log(index)
+         })
+        .on("mouseout", function(){
+          var circle_animate = d3.select(this);
+          circle_animate.transition().duration(500)
+          .attr("r", circle_animate.attr("r") * 1 - 10 )
+        })
     })
 
     $.ajax({
@@ -75,7 +88,6 @@ d3.json("world.json", function(error, topology) {
 
     })
 });
-
 var zoom = d3.behavior.zoom()
     .on("zoom",function() {
         g.attr("transform","translate("+
