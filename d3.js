@@ -15,7 +15,6 @@ var path = d3.geo.path()
 
 var g = svg.append("g");
 
-
 // load and display the World
 d3.json("world.json", function(error, topology) {
     g.selectAll("path")
@@ -26,6 +25,7 @@ d3.json("world.json", function(error, topology) {
       .attr("d", path)
 
     d3.csv("airports.csv", function(error, data) {
+      // var csv = data;
       g.selectAll("circle")
         .data(data)
         .enter()
@@ -41,9 +41,28 @@ d3.json("world.json", function(error, topology) {
           return Math.sqrt(d.traffic)/700
         })
         .attr("id", function(d){
-          return d.airport
+          return index
         })
+        .on("mouseover", function(d) {
+          debugger
+          d3.select(this).text(d.city)
+         })
+        .on("mouseout", function(d) {
+         })
     })
+
+    // var node = svg.selectAll(".node")
+    //   .data(graph.nodes)
+    //   .enter().append("g").call(force.drag);
+
+    //   node.append("circle")
+    //   .attr("class", "node")
+    //   .attr("r", 5)
+    //   .style("fill", function (d) { return color(d.group); });
+
+    //   node.append("text")
+    //   .text(function (d) { return d.city; });
+
     $.ajax({
       url: "http://ip-api.com/json",
       dataType: "json"
@@ -57,9 +76,6 @@ d3.json("world.json", function(error, topology) {
         .attr("height", 50)
         .attr("id", "pin")
     })
-
-    // console.log(userLong)
-
 });
 
 var zoom = d3.behavior.zoom()
