@@ -25,7 +25,6 @@ d3.json("world.json", function(error, topology) {
       .attr("d", path)
 
     d3.csv("airports.csv", function(error, data) {
-      // var csv = data;
       g.selectAll("circle")
         .data(data)
         .enter()
@@ -46,8 +45,6 @@ d3.json("world.json", function(error, topology) {
         .on("mouseover", function(d) {
           $('#navigation').html(d.city)
           $('#navigation').append(" " + d.price)
-         })
-        .on("mouseout", function(d) {
          })
     })
 
