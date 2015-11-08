@@ -8,7 +8,7 @@ $(document).ready(function(){
     $(this).slideUp('slow')
   })
   $('body').on('click', '#img_circle', goToDynamicPage)
-  $('body').on('click', '.rectangle', skyScannerPopUp)
+  // $('body').on('click', '.rectangle', skyScannerPopUp)
 })
 
 var $grid = function(){$('.grid').masonry({
