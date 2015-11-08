@@ -1,12 +1,12 @@
 
+html {
+  margin: 0px;
+  overflow: hidden;
+}
+
 body {
   position: relative;
   margin: 0px;
-}
-
-html {
-  margin: 0px;
-
 }
 
 .airport {
@@ -33,7 +33,7 @@ svg {
   width: 100%;
   height: 100vh;
   border-color: red;
-
+  cursor: pointer;
 }
 
 #logo {
@@ -68,7 +68,7 @@ svg {
   margin: 0 auto;
   left: 5%;
   right: 0;
-  top: 35%;
+  top: 39%;
   bottom: 0;
 }
 
@@ -104,6 +104,7 @@ svg {
   position: absolute;
   top: 8%;
   left: 6%;
+  cursor: pointer;
 }
 
 #loc_price {
@@ -112,6 +113,7 @@ svg {
   position: absolute;
   top: 100px;
   -webkit-transform: rotate(-10deg);
+  cursor: pointer;
 }
 
 #loc_price a {
