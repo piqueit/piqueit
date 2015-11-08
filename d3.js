@@ -36,8 +36,13 @@ d3.json("world.json", function(error, topology) {
             return projection([d.longitude, d.latitude])[1];
           })
           .attr("class", "airport")
-          .attr("r",20)
-          .style("fill", "red")
+          .attr("r", function(d){
+            console.log(d.traffic)
+            return Math.sqrt(d.traffic)/700
+          })
+          .attr("id", function(d){
+            return d.airport
+          })
       })
 });
 
