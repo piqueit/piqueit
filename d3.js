@@ -75,7 +75,6 @@ d3.json("world.json", function(error, topology) {
 
     })
 });
-
 var zoom = d3.behavior.zoom()
     .on("zoom",function() {
         g.attr("transform","translate("+

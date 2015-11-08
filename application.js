@@ -9,7 +9,13 @@ $(document).ready(function(){
   })
   $('body').on('click', '#img_circle', goToDynamicPage)
   // $('body').on('click', '.rectangle', skyScannerPopUp)
+  $('#goToEmirates').click(goToEmirates)
 })
+
+var goToEmirates = function(){
+
+  window.open('http://www.emirates.com/english/plan_book/dubai_international_airport/dubai_international_airport.aspx')
+}
 
 var $grid = function(){$('.grid').masonry({
     itemSelector: '.grid-item',
@@ -70,17 +76,19 @@ var hitFlickr = function(city){
     var photos = data.photos.photo;
     var pickedPhotos = [];
     for(i=0; i < 21; i++) {
-      var num = Math.floor(Math.random() * 100) + 1;
-      pickedPhotos.push(num);
-      var html = "";
-      var listing = photos[num];
-      var resultsEl = $('.g' + i);
-        html += "<div data-id=" + listing.id + " class='listing'>";
-        html += "<img src='https://farm" + listing.farm + ".staticflickr.com/" + listing.server + "/" + listing.id + "_" + listing.secret + ".jpg' />";
-        html += "</a>";
-        html += "</div>";
-        stubThatHub(city)
-        resultsEl.html(html)
+      if (i != 11 && i != 4){
+        var num = Math.floor(Math.random() * 100) + 1;
+        pickedPhotos.push(num);
+        var html = "";
+        var listing = photos[num];
+        var resultsEl = $('.g' + i);
+          html += "<div data-id=" + listing.id + " class='listing'>";
+          html += "<img src='https://farm" + listing.farm + ".staticflickr.com/" + listing.server + "/" + listing.id + "_" + listing.secret + ".jpg' />";
+          html += "</a>";
+          html += "</div>";
+          stubThatHub(city)
+          resultsEl.html(html)
+        }
       }
   }).fail(function(xhr, textStatus, errorThrown) {
     console.log(xhr);

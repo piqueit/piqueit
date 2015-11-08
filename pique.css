@@ -207,6 +207,24 @@ svg {
   z-index: 2000;
 }
 
+#emirates{
+  display: inline-block;
+  text-align: center;
+}
+#goToEmirates {
+  vertical-align: middle;
+  z-index: 2000;
+  font-size: 3em;
+  box-shadow: 3 3 10 black;
+  border-radius: 1em;
+  border: 3px solid black;
+  margin: .5em;
+  padding: .5em;
+  background-color: darkred;
+  font-weight: bolder;
+  color: white;
+}
+
 #skyscanner {
   display: none;
   position: fixed;
