@@ -1,6 +1,7 @@
 var wdth = $( window ).width();
 var hght = $( window ).height();
 var user;
+var city
 
 var projection = d3.geo.mercator()
     .center([0,70])
@@ -43,6 +44,7 @@ d3.json("world.json", function(error, topology) {
           return d.airport
         })
         .on("mouseover", function(d) {
+          city = d.city
           $('#navigation').html(d.city)
           $('#navigation').append(" " + d.price)
          })
