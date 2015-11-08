@@ -66,20 +66,24 @@ svg {
   width: 450px;
   height: auto;
   position: absolute;
-  margin: auto;
-  left: 0;
+  margin: 0 auto;
+  left: 5%;
   right: 0;
-  top: 10em;
+  top: 35%;
   bottom: 0;
-  color: DimGray;
-  font-size: 15px;
-  font-family: sans-serif;
-  text-align: center;
 }
 
 #opener_inner img {
   width: 450px;
   height: auto;
+}
+
+#opener_inner p {
+  margin-top: -15px;
+  color: DimGray;
+  font-size: 15px;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 #cover_logo {

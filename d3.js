@@ -1,10 +1,18 @@
 
 
+// $( window ).resize(function() {
+
+
+var wdth = $( window ).width();
+var hght = $( window ).height();
+
 var projection = d3.geo.mercator()
     .center([0,70])
     .rotate([-10,0])
-    .translate([600,110])
+    .translate([wdth/2,hght/3])
     .scale(165);
+
+
 
 
 var svg = d3.select("body").selectAll("div").append("svg")
@@ -43,6 +51,8 @@ d3.json("world.json", function(error, topology) {
             return d.airport
           })
       })
+// });
+
 });
 
 var zoom = d3.behavior.zoom()
