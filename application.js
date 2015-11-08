@@ -1,7 +1,7 @@
 $(document).ready(function(){
   console.log("Ready!")
   $('a').click(updatePage)
-  $("body").click("svg > g > circle", grow)
+  $("body").click(".airport", grow)
 })
 
 var updatePage = function(e){
