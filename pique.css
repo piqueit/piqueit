@@ -198,3 +198,12 @@ svg {
   z-index: 2000;
 }
 
+#skyscanner {
+  display: none;
+  position: fixed;
+  margin-top: 0;
+  border:5px solid black;
+  width: 400px;
+  height:400px;
+}
+

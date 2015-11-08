@@ -1,19 +1,43 @@
 $(document).ready(function(){
+
   console.log("Ready!")
+  // var interval = window.setInterval(switchUpView, 12000);
+
   // $('a').click(updatePage)
   $('div[id="opener_wrap"]').click(function(e){
     e.preventDefault()
     $(this).slideUp('slow')
   })
-  $('body').on('click', '#navigation', goToDynamicPage)
+
+  // $('body').on('click', '#navigation', goToDynamicPage)
 
   $('.grid').masonry({
     percentPosition: true
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
   });
-})
 
+  $('body').on('click', '#img_circle', goToDynamicPage)
+  $('body').on('click', '.rectangle', skyScannerPopUp)
+
+})
+var cityImgs = {
+  Bangalore: ['bangalore2.png', "$804"],
+  Beijing: ['beijing.png', "$551"],
+  Cairo: ['cairo.png', "$678"],
+  Dallas: ['dallas.png', "$209"],
+  Dammam: ['dammam.png', "$1148"],
+  Delhi: ['delhi.png', "$595"],
+  Dubai: ['dubai.png', "$941"],
+  Dubai2: ['dubai2.png', "$941"],
+  Harere: ['harere.png', "$1268"],
+  Johanesburg: ['johanesburg.png', "$901"],
+  London: ['london.png', "$766"],
+  Manila: ['manila.png', "$538"],
+  Mauritius: ['mauritius.png', "$1288"],
+  Paris: ['paris.png', "$923"],
+  Toronto: ['toronto.png', "$398"]
+}
 var updatePage = function(e){
   e.preventDefault()
   url = $(this).attr('href')
@@ -29,9 +53,11 @@ var goToDynamicPage = function(e){
   $("#landing-page").hide()
   $("svg").hide()
   // $.get('/dynamic_montage', function(response){
-    // $('body').html(response)
-  console.log(city)
-  hitFlickr(city)
+
+  //   $('body').html(response)
+  // console.log(city)
+  // hitFlickr(city)
+
   // })
 }
 
@@ -85,4 +111,20 @@ var stubThatHub = function(city){
       }
     }
   });
+}
+
+
+// var switchUpView = function(){
+//   var city = $("circle." + Math.floor(Math.random()*15 + 1)).attr("id")
+//   console.log(city)
+//   $('#img_circle img').remove()
+//   $('#img_circle').append("<img src='/assets/images/" + cityImgs[city][0] +"'>" )
+//   $('#navigation').html(city)
+//   $('#navigation').append(" " + cityImgs[city][1])
+//   hitFlickr(city)
+//   stubThatHub(city)
+// }
+
+var skyScannerPopUp = function(){
+  $("#skyscanner").show
 }
