@@ -64,7 +64,7 @@ var hitFlickr = function(city){
     jsonpCallback: 'jsonFlickrApi'
   }).done(function(data) {
     $grid();
-    $('#montage').hide().show(0);
+    $('#flickr-results').hide().show(0);
     console.log(data.photos.photo.length)
     var photos = data.photos.photo;
     var pickedPhotos = [];
@@ -88,7 +88,7 @@ var hitFlickr = function(city){
     // alert("FAIL!!");
   }).always(function(){
     $grid();
-    $('#montage').hide().show(0);
+    $('#flickr-results').hide().show(0);
   })
 };
 
