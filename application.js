@@ -69,7 +69,7 @@ var hitFlickr = function(city){
     console.log(data.photos.photo.length)
     var photos = data.photos.photo;
     var pickedPhotos = [];
-    if (photos == 0){
+    if (photos){
       for(i=0; i < 21; i++) {
         var num = Math.floor(Math.random() * 100) + 1;
         pickedPhotos.push(num);
