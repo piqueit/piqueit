@@ -126,6 +126,8 @@ svg {
 #navigation_container {
    margin: 0 auto;
    width: 200px;
+   text-align: center;
+   vertical-align: middle;
 }
 
 .rectangle {
@@ -140,7 +142,14 @@ svg {
    z-index: 500; /* the stack order: foreground */
    margin: 3em 0;
    cursor: pointer;
-   color: white;
+}
+
+#navigation{
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 31px;
 }
 
 .l-triangle-top {
