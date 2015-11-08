@@ -58,14 +58,19 @@ d3.json("world.json", function(error, topology) {
           city = d.city
           var circle_animate = d3.select(this);
           circle_animate.transition().duration(500)
-          .attr("r", circle_animate.attr("r") * 1 + 5 )
+          .attr("r", circle_animate.attr("r") * 1 + 10 )
           $('#img_circle img').remove()
           $('#img_circle').append("<img src='/assets/images/" + cityImgs[city][0] +"'>" )
           $('#navigation').html(city)
           $('#navigation').append(" " + d.price)
           stubThatHub(city)
           hitFlickr(city)
-         });
+         })
+        .on("mouseout", function(){
+          var circle_animate = d3.select(this);
+          circle_animate.transition().duration(500)
+          .attr("r", circle_animate.attr("r") * 1 - 10 )
+        })
     })
 
     $.ajax({
