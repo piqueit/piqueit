@@ -181,7 +181,7 @@ var stubThatHub = function(city){
    success: function (msg) {
     var event = msg.events[Math.floor(Math.random()*msg.events.length)]
      if(msg.numFound != 0){
-       $("#stubhub").html("<div class='hovereffect'><h2>C u l t u r e </h2><p class='stubhub'><a class='info' href='http://stubhub.co.uk/'"+event.eventUrl+"'>" + event.name + "</a></p></div></div>")
+       $("#stubhub").html("<div class='hovereffect'><h2>C u l t u r e </h2><p class='stubhub'><a class='info' href='http://stubhub.co.uk/"+event.eventUrl+"'>" + event.name + "</a></p></div></div>")
      }
      else {
         $("#stubhub").html("<div class='hovereffect'><h2>No Concerts in the Area</h2></div></div>")
